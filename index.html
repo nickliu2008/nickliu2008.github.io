@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicholas Liu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f6f4;
+    --grid-line: #e2e6e4;
+    --ink: #1b2430;
+    --ink-soft: #4a5568;
+    --accent: #2f5fd9;
+    --accent-gold: #c98a1f;
+    --rule: #cfd6d2;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171a;
+      --grid-line: #23272b;
+      --ink: #e8ecef;
+      --ink-soft: #a3adb8;
+      --accent: #7fa2ff;
+      --accent-gold: #e0b25a;
+      --rule: #33393e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14171a;
+    --grid-line: #23272b;
+    --ink: #e8ecef;
+    --ink-soft: #a3adb8;
+    --accent: #7fa2ff;
+    --accent-gold: #e0b25a;
+    --rule: #33393e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  h1 {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 38px);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .tagline {
+    color: var(--ink-soft);
+    font-size: 17px;
+    margin: 0 0 24px;
+    max-width: 46ch;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13.5px;
+    margin-bottom: 56px;
+  }
+  .contact-row a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .contact-row a:hover, .contact-row a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+  section { margin-bottom: 52px; }
+  h2 {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project {
+    padding: 20px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .project:last-child { border-bottom: none; }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .project-title {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .stack {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--accent-gold);
+    white-space: nowrap;
+  }
+  .project p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 64ch;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 10px 16px;
+    font-size: 14.5px;
+  }
+  .skills-grid dt {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding-top: 2px;
+  }
+  .skills-grid dd {
+    margin: 0;
+  }
+  footer {
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  footer a { color: inherit; }
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; gap: 2px 0; }
+    .skills-grid dt { margin-top: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Nicholas Liu</h1>
+  <p class="tagline">Physics major moving toward CS/EE at UCLA. I like building things that turn data or rules into decisions — course predictors, seat monitors, small games.</p>
+
+  <div class="contact-row">
+    <a href="mailto:nickliu0901a@gmail.com">nickliu0901a@gmail.com</a>
+    <a href="https://github.com/nickliu2008" target="_blank" rel="noopener">github.com/nickliu2008</a>
+    <a href="https://www.linkedin.com/in/nicholas-liu-a21895439/" target="_blank" rel="noopener">linkedin.com/in/nicholas-liu</a>
+  </div>
+
+  <section>
+    <h2>projects</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Predicting Student Academic Performance</span>
+        <span class="stack">python · scikit-learn</span>
+      </div>
+      <p>Compared five ML algorithms on the UCI Student Performance dataset — logistic regression reached 94.9% accuracy predicting pass/fail, and a linear model hit R² = 0.75 predicting exact final grades. Feature-importance analysis found absences and prior course failures were the strongest predictors after prior grades.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">BruinSeat</span>
+        <span class="stack">python</span>
+      </div>
+      <p>A UCLA course seat-availability monitor built around a pluggable, fully-tested architecture — 7 passing unit tests cover seat-opening detection and a simple trend model that predicts when a full section is likely to open up. The live network call is isolated from the logic on purpose, so everything except one HTTP request is independently testable.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">QuickSort Performance Benchmark</span>
+        <span class="stack">python</span>
+      </div>
+      <p>Implemented QuickSort from scratch and benchmarked it against Python's built-in sort on randomized lists up to 1,000,000 integers — the built-in sort won by 6&ndash;8x, a concrete look at why implementation-level optimization matters as much as asymptotic complexity.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Cat Maze</span>
+        <span class="stack">typescript · makecode</span>
+      </div>
+      <p>A tile-based maze game with health-reactive sprite states, an interval-based enemy spawner whose projectiles track the player, and multi-level progression through hand-built maps toward a win state.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>skills</h2>
+    <dl class="skills-grid">
+      <dt>languages</dt>
+      <dd>Python, JavaScript, TypeScript</dd>
+      <dt>ml / data</dt>
+      <dd>pandas, NumPy, scikit-learn, Matplotlib</dd>
+      <dt>math</dt>
+      <dd>Calculus, Linear Algebra, Statistics</dd>
+      <dt>currently learning</dt>
+      <dd>ML/AI fundamentals &mdash; working through Python and math foundations toward neural networks and transformers</dd>
+    </dl>
+  </section>
+
+  <footer>
+    more projects on <a href="https://github.com/nickliu2008" target="_blank" rel="noopener">github.com/nickliu2008</a>
+  </footer>
+
+</div>
+</body>
+</html>
